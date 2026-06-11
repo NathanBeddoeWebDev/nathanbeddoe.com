@@ -1,17 +1,73 @@
 ---
-
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<SiteLayout>
+    <section class="page-section">
+        <div class="panel">
+            <div class="panel__image">
+                <img src="/images/me.jpg" alt="">
+            </div>
+            <div class="panel__content">
+                <h1 class="title">Nathan Beddoe</h1>
+                <p class="lead">
+                    An Australian software developer with expertise in frontend web
+                    and API development.
+                </p>
+                <ul class="links-list">
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Resume</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</SiteLayout>
+
+<style>
+    .page-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .panel {
+        display: flex;
+        width: 768px;
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    @media screen and (max-width: 540px) {
+        .panel {
+            flex-direction: column;
+            padding-inline: 1rem;
+        }
+
+        .page-section {
+            align-items: start;
+            padding-block: 1.5rem;
+        }
+    }
+
+    .panel__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .title {
+        text-align: left;
+        width: 100%;
+    }
+    .links-list {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        gap: 2rem;
+        justify-content: start;
+    }
+</style>
